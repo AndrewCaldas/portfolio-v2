@@ -2,18 +2,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 import NavLink from "./nav-link";
+import MobileNav from "./mobile-nav";
+import { Fragment } from "react";
 
 export default function Header() {
   return (
-    <header className="flex justify-between items-center w-full min-h-14">
+    <header className="flex items-center justify-between w-full min-h-14">
+      {/* Menu Mobile */}
+      <MobileNav />
+
       <Link href="/">
-        <Image alt="" src="/logo.png" width={60} height={60} />
+        <Image alt="" src="/logo.png" width={65} height={65} />
       </Link>
 
-      <nav aria-label="main menu">
-        <ul className="flex flex-row gap-6">
+      {/* Menu Desktop */}
+      <nav aria-label="main menu" className="hidden md:flex">
+        <ul className="flex flex-row flex-nowrap gap-8">
           <li>
-            <NavLink href="/about">About me</NavLink>
+            <NavLink href="/about">About</NavLink>
           </li>
           <li>
             <NavLink href="/articles">Articles</NavLink>
