@@ -3,9 +3,8 @@ import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 import NavLink from "./nav-link";
 import MobileNav from "./mobile-nav";
-import { Fragment } from "react";
 
-export default function Header() {
+export function Header() {
   return (
     <header className="flex items-center justify-between w-full min-h-14">
       {/* Menu Mobile */}
