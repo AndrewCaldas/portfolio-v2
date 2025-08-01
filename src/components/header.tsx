@@ -1,18 +1,15 @@
-import Image from "next/image";
-import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
 import NavLink from "./nav-link";
 import MobileNav from "./mobile-nav";
+import { Logo } from "./logo";
 
 export function Header() {
   return (
-    <header className="flex items-center justify-between w-full min-h-14">
+    <header className="flex items-center justify-between w-full min-h-14 ">
       {/* Menu Mobile */}
       <MobileNav />
 
-      <Link href="/">
-        <Image alt="" src="/logo.png" width={65} height={65} />
-      </Link>
+      <Logo>Drew</Logo>
 
       {/* Menu Desktop */}
       <nav aria-label="main menu" className="hidden md:flex">

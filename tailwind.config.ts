@@ -10,7 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        elegant: ["var(--font-jost)", "serif"],
+        soft: ["var(--font-jost)", "serif"],
+        elegant: ["var(--font-bitcount)", "serif"],
       },
     },
   },
