@@ -19,7 +19,7 @@ export function AnimatedBall({
 }: AnimatedBallProps) {
   return (
     <div
-      className={`absolute rounded-full [backface-visibility:hidden] w-[20vmin] h-[20vmin] animate-move  text-[${currentColor}]`}
+      className={`absolute rounded-full w-[10vmin] h-[10vmin] [backface-visibility:hidden] animate-move text-[${currentColor}]`}
       style={{
         top: `${top}`,
         left: `${left}`,
@@ -27,7 +27,7 @@ export function AnimatedBall({
         animationDelay: `${animationDelay}`,
         transformOrigin: `${transformOrigin}`,
         boxShadow: `${boxShadow} ${currentColor}`,
-        opacity: 0.4,
+        opacity: 0.3,
       }}
     ></div>
   );
