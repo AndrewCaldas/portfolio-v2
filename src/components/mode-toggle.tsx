@@ -5,33 +5,29 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+
+const listThemes = ["light", "dark"];
 
 export function ModeToggle() {
   const { setTheme } = useTheme();
 
+  const [currentTheme, setCurrentTheme] = React.useState(0);
+
+  function toggleTheme() {
+    setCurrentTheme((prevTheme) => (prevTheme === 0 ? 1 : 0));
+
+    setTheme(listThemes[currentTheme]);
+  }
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <Button
+      variant="secondary"
+      size="icon"
+      className="size-8 cursor-pointer"
+      onClick={toggleTheme}
+    >
+      {currentTheme === 0 ? <Sun /> : <Moon />}
+      <span className="sr-only">Toggle theme</span>
+    </Button>
   );
 }
