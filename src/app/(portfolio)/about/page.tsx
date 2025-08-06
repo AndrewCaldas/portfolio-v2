@@ -1,7 +1,35 @@
 import Image from "next/image";
+import { Download } from "lucide-react";
 import ProfilePicture from "@/assets/images/profile.png";
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+import { ExperienceCard } from "@/components/experience-card";
+
+let careerList = [
+  {
+    position: "Software Development III",
+    companyName: "Leroy Merlin",
+    companyLocation: "Morumbi, SP",
+    companyUrl: "/",
+    startDate: "01/07/2021",
+    endDate: "",
+  },
+  {
+    position: "Software Development II",
+    companyName: "IBM Brasil",
+    companyLocation: "Paraiso, SP",
+    companyUrl: "/",
+    startDate: "02/01/2019",
+    endDate: "01/06/2021",
+  },
+  {
+    position: "Software Development I",
+    companyName: "Red Fox Consulting",
+    companyLocation: "Republica, SP",
+    companyUrl: "/",
+    startDate: "01/03/2018",
+    endDate: "01/01/2019",
+  },
+];
 
 export default function About() {
   return (
@@ -44,10 +72,13 @@ export default function About() {
       </div>
 
       <div className="flex flex-col">
-        <div>empresa 1</div>
-        <div>empresa 2</div>
-        <div>empresa 3</div>
-        <div>empresa 4</div>
+        <div className="text-2xl font-bold my-6">Career</div>
+
+        {careerList?.map((exp, index) => (
+          <div className="mb-10">
+            <ExperienceCard key={index} {...exp} />
+          </div>
+        ))}
       </div>
     </div>
   );
