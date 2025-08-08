@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { Download } from "lucide-react";
 import ProfilePicture from "@/assets/images/profile.png";
-import { Button } from "@/components/ui/button";
 import { ExperienceCard } from "@/components/experience-card";
+import { DownloadResumeButton } from "@/components/download-resume-button";
 
 let careerList = [
   {
@@ -64,10 +63,7 @@ export default function About() {
             accident, sometimes on purpose (injected humour and the like).
           </div>
 
-          <Button variant="secondary" className="h-8 w-fit cursor-pointer">
-            <Download />
-            Download CV
-          </Button>
+          <DownloadResumeButton />
         </div>
       </div>
 
