@@ -1,5 +1,4 @@
 import Image from "next/image";
-import ProfilePicture from "@/assets/images/profile.png";
 import { ExperienceCard } from "@/components/experience-card";
 import { DownloadResumeButton } from "@/components/download-resume-button";
 
@@ -40,7 +39,7 @@ export default function About() {
           <Image
             className="rounded-lg shadow-2xl"
             alt="profile picture"
-            src={ProfilePicture}
+            src="/images/profile.png"
             width={300}
             height={300}
           />
