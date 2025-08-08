@@ -14,18 +14,12 @@ export function Header() {
       {/* Menu Desktop */}
       <nav aria-label="main menu" className="hidden md:flex">
         <ul className="flex flex-row flex-nowrap gap-8">
-          <li>
-            <NavLink href="/about">About</NavLink>
-          </li>
-          <li>
-            <NavLink href="/articles">Articles</NavLink>
-          </li>
-          <li>
-            <NavLink href="/projects">Projects</NavLink>
-          </li>
-          <li>
-            <NavLink href="/contact">Contact</NavLink>
-          </li>
+          <NavLink href="/about">About</NavLink>
+          <NavLink href="/articles" isDisabled>
+            Articles
+          </NavLink>
+          <NavLink href="/projects">Projects</NavLink>
+          <NavLink href="/contact">Contact</NavLink>
         </ul>
       </nav>
 

@@ -75,7 +75,7 @@ export default function About() {
         <div className="text-2xl font-bold my-6">Career</div>
 
         {careerList?.map((exp, index) => (
-          <div className="mb-10">
+          <div key={index} className="mb-10">
             <ExperienceCard key={index} {...exp} />
           </div>
         ))}
